@@ -1,0 +1,14 @@
+Student: VEERA SATYAVANI RAJANA
+Date: November 25, 2026
+Python: 3.11.5 (CPython, Windows)
+OS: Windows 11 Pro (Windows_NT 10.0.26200), x86_64
+
+Virtual Environment Setup (from each project's final solution/ folder):
+    python -m venv .venv
+    .venv\Scripts\python.exe -m pip install -e ".[dev]"
+
+Offline Execution Notes:
+All evidence was generated using the course's supported offline/replay infrastructure:
+  - 01-policy-pipeline: Acceptance test suite (45 passed, 3 skipped live tests), mypy, ruff, calibration_report.py, and the documented offline fallback for the `pipeline` command (`pytest tests/test_us04_routing.py -v`) as no external ANTHROPIC_API_KEY was configured.
+  - 02-mortgage-extraction: Acceptance test suite (25 passed), mypy, ruff, and all three document fixture evaluations executed via `--mode replay` against bundled recorded responses.
+  - 03-supply-chain: Acceptance test suite (34 passed), mypy, ruff, and both standard and degraded investigation runs executed via `--offline` and `--simulate-timeout`.

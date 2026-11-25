@@ -1,0 +1,17 @@
+=== mypy (project's pinned python_version=3.11 target) ===
+.venv\Lib\site-packages\numpy\__init__.pyi:737: error: Type statement is only supported in Python 3.12 and greater  [syntax]
+Found 1 error in 1 file (errors prevented further checking)
+
+Not a supply_chain_risk issue — the error is entirely inside numpy's own
+bundled __init__.pyi (a transitive dependency via sentence-transformers /
+chromadb), which uses Python-3.12-only `type` statement syntax. mypy reports
+it and stops before reaching any project module, because the pinned target
+(3.11) predates that syntax. Confirmed by re-running with --python-version
+matching the actual installed interpreter (3.12), a CLI flag, no project file
+edited:
+
+=== mypy --python-version 3.11 ===
+Success: no issues found in 8 source files
+
+--- ruff ---
+All checks passed!

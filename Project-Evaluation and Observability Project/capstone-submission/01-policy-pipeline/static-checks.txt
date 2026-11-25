@@ -1,0 +1,4 @@
+Success: no issues found in 11 source files
+
+--- ruff ---
+All checks passed!
